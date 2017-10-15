@@ -7,12 +7,12 @@ class BankAccount
     @status = "open"
   end
 
-  def deposit
-
+  def deposit(n)
+    self.balance += n
   end
 
   def display_balance
-    "You balance is #{self.balance}."
+    "You balance is $#{self.balance}."
   end
 
 end
