@@ -17,8 +17,10 @@ class Transfer
 
   def execute_transaction
     binding.pry
-    sender.balance > self.amount
-    receiver.deposit(self.amount)
+    if sender.balance > self.amount == true && self.valid?
+      receiver.deposit(self.amount)
+      sender.balance += self.amount
+    end
   end
 
 end
