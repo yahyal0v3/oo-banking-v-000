@@ -3,8 +3,6 @@ class BankAccount
 
   def initialize(name)
     @name = name
-    self.balance = 1000
-    self.status = open
   end
 
 end
