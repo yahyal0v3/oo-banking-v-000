@@ -19,7 +19,7 @@ class Transfer
     if sender.balance > self.amount == true && self.valid?
       sender.balance -= self.amount
       receiver.deposit(self.amount)
-      self.status == "complete"
+      self.status = "complete"
     end
   end
 
