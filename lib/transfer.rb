@@ -17,7 +17,7 @@ class Transfer
 
   def execute_transaction
     if self.status == "complete"
-      "Transaction rejected. You have already made this transfer."
+      self.status = "rejected"
     elsif sender.balance > self.amount == true && self.valid?
       sender.balance -= self.amount
       receiver.deposit(self.amount)
