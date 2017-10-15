@@ -16,7 +16,6 @@ class Transfer
   end
 
   def execute_transaction
-    binding.pry
     if self.status == "complete" || sender.valid? == false
       self.status = "rejected"
     elsif sender.balance > self.amount && self.valid?
@@ -24,6 +23,7 @@ class Transfer
       receiver.deposit(self.amount)
       self.status = "complete"
     else
+      self.status = "rejected"
       "Transaction rejected. Please check your account balance."
     end
   end
